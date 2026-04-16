@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cand</title>
+  <title>My Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -68,12 +68,12 @@
   <button class="btn" onclick="showMessage()">Click Me</button>
 </div><div class="section" id="about">
   <h2>About Me</h2>
-  <p>Welocme To Ny Website :)</p>
+  <p>Write something about yourself here.</p>
 </div><div class="section" id="contact">
   <h2>Contact</h2>
-  <p>Email: mathewethan019@gmail.com</p>
+  <p>Email: example@email.com</p>
 </div><footer>
-  <p>My Website</p>
+  <p>© 2026 My Website</p>
 </footer><script>
   function showMessage() {
     alert("Thanks for visiting my site 😎");
@@ -152,12 +152,23 @@
   <p>I sell high-quality chains and jewellery. Message me to buy or ask about prices.</p>
 </div><div class="section" id="contact">
   <h2>Contact</h2>
-  <p>Offical Made By Ethan!</p>
+  <p>Phone / WhatsApp: +447737977729</p>
 </div><footer>
-  <p>Ethan's Jewellery</p>
+  <p>© 2026 Ethan's Jewellery</p>
 </footer><script>
   function openWhatsApp() {
     window.open("https://wa.me/447737977729?text=Hi%20I%20want%20to%20buy%20a%20chain", "_blank");
   }
 </script></body>
-</html>
+</html> // Disable Right-Click
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Disable F12, Ctrl+Shift+I, Ctrl+U
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || 
+       (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) || 
+       (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+      return false;
+    }
+  }
+</script>
