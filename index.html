@@ -1,163 +1,124 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cand Chains [Limited]</title>
-  <style>
-    body {
-      font-family: "Comic Sans MS"
-      margin: 0;
-      background: #111;
-      color: #fff;
-    }
-    header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #00ffcc;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .hero h1 {
-      font-size: 40px;
-    }
-    .btn {
-      background: #00ffcc;
-      color: #000;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-    .btn:hover {
-      background: #00cc99;
-    }
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Down</title>
+    <style>
+        :root {
+            --neon-yellow: #ccff00;
+            --dark-bg: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--dark-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            border: 4px solid var(--neon-yellow);
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.2), 
+                        inset 0 0 15px rgba(204, 255, 0, 0.1);
+            max-width: 80%;
+        }
+
+        /* The Dead Android SVG Styling */
+        .android-icon {
+            width: 150px;
+            height: 150px;
+            fill: #3DDC84; /* Android Green */
+            margin-bottom: 20px;
+            filter: grayscale(0.8) opacity(0.7);
+            animation: flicker 3s infinite;
+        }
+
+        h1 {
+            color: var(--neon-yellow);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 0 0 5px #fff, 
+                         0 0 10px var(--neon-yellow), 
+                         0 0 20px var(--neon-yellow);
+            letter-spacing: 2px;
+        }
+
+        p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            color: #888;
+        }
+
+        /* Simple flickering animation for the "dead" tech feel */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+            20%, 24%, 55% { opacity: 0.3; }
+        }
+
+        /* Glitch effect on the box */
+        .glitch-border {
+            animation: border-glow 5s infinite alternate;
+        }
+
+        @keyframes border-glow {
+            from { box-shadow: 0 0 10px rgba(204, 255, 0, 0.3); }
+            to { box-shadow: 0 0 30px rgba(204, 255, 0, 0.6); }
+        }
+    </style>
 </head>
-<body><header>
-  <h1>My Website</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header><div class="hero">
-  <h1>Welcome to My Site</h1>
-  <p>Welcome To My Site!🔥</p>
-  <button class="btn" onclick="showMessage()">Information</button>
-</div><div class="section" id="about">
-  <h2>About Me</h2>
-  <p>I sell chains and etc!</p>
-</div><div class="section" id="contact">
-  <h2>Contact</h2>
-  <p>Email: mathewethan019@gmail.com</p>
-</div><footer>
-  <p>© 2026</p>
-</footer><script>
-  function showMessage() {
-    alert("Update Soon! Make sure to come back and check on 12/12/12");
-  }
-</script></body>
-</html><!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethan's Jewellery</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #111;
-      color: #fff;
-    }
-    header {
-      background: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #00ffcc;
-    }
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .hero h1 {
-      font-size: 40px;
-    }
-    .btn {
-      background: #00ffcc;
-      color: #000;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-    .btn:hover {
-      background: #00cc99;
-    }
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body><header>
-  <h1>Ethan's Chains & clothes </h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header><div class="hero">
-  <h1>Premium Chains & Jewellery</h1>
-  <p>I sell chains and jewellery at great prices 💎</p>
-  <button class="btn" onclick="openWhatsApp()">Visit / Shop Now</button>
-</div><div class="section" id="about">
-  <h2>About</h2>
-  <p>I sell high-quality chains and jewellery. Message me to buy or ask about prices.</p>
-</div><div class="section" id="contact">
-  <h2>Contact</h2>
-  <p>Phone / WhatsApp: +44 7737-977729</p>
-</div><footer>
-  <p>© 2026 Ethan's Jewellery</p>
-</footer><script>
-  function openWhatsApp() {
-    window.open("https://wa.me/447737977729?text=Hi%20I%20want%20to%20talk%20about%20chains%20and%20prices!", "_blank");
-  }
-</script></body>
-  
+<body>
+
+    <div class="container glitch-border">
+        <svg class="android-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.523 15.3414C17.0588 15.3414 16.6823 14.965 16.6823 14.5008C16.6823 14.0366 17.0588 13.6601 17.523 13.6601C17.9871 13.6601 18.3636 14.0366 18.3636 14.5008C18.3636 14.965 17.9871 15.3414 17.523 15.3414ZM6.47705 15.3414C6.01287 15.3414 5.6364 14.965 5.6364 14.5008C5.6364 14.0366 6.01287 13.6601 6.47705 13.6601C6.94123 13.6601 7.31771 14.0366 7.31771 14.5008C7.31771 14.965 6.94123 15.3414 6.47705 15.3414ZM17.9625 10.4357L19.7434 7.35121C19.8631 7.14389 19.792 6.87815 19.5847 6.75846C19.3773 6.63878 19.1116 6.70984 18.9919 6.91717L17.1852 10.0461C15.6596 9.35191 13.9238 8.96191 12 8.96191C10.0762 8.96191 8.34038 9.35191 6.81483 10.0461L5.00812 6.91717C4.88843 6.70984 4.62269 6.63878 4.41537 6.75846C4.20805 6.87815 4.13699 7.14389 4.25667 7.35121L6.03754 10.4357C3.12581 12.062 1.14442 15.0163 0.84082 18.4909H23.1592C22.8556 15.0163 20.8742 12.062 17.9625 10.4357Z"/>
+            <line x1="6" y1="14" x2="7" y2="15" stroke="black" stroke-width="0.5"/>
+            <line x1="7" y1="14" x2="6" y2="15" stroke="black" stroke-width="0.5"/>
+            <line x1="17" y1="14" x2="18" y2="15" stroke="black" stroke-width="0.5"/>
+            <line x1="18" y1="14" x2="17" y2="15" stroke="black" stroke-width="0.5"/>
+        </svg>
+
+        <h1>Thank you for visiting!<br>But the website is down!</h1>
+        <p id="status-text">Attempting to reconnect...</p>
+    </div>
+
+    <script>
+        // Adding a bit of dynamic fun: Changing the sub-text every few seconds
+        const messages = [
+            "Attempting to reconnect...",
+            "Checking server status...",
+            "Feeding the droids...",
+            "Still down. Check back later!",
+            "System error: 404 Life Not Found"
+        ];
+        
+        let index = 0;
+        const statusElement = document.getElementById('status-text');
+
+        setInterval(() => {
+            index = (index + 1) % messages.length;
+            statusElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                statusElement.textContent = messages[index];
+                statusElement.style.opacity = 1;
+            }, 500);
+            
+        }, 3000);
+
+        // Transition effect for status text
+        statusElement.style.transition = "opacity 0.5s ease";
+    </script>
+</body>
+</html>
