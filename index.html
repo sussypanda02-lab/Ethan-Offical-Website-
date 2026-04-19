@@ -1,150 +1,163 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Offline</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #000;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        #matrix {
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: block;
-        }
-
-        .overlay {
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .status-box {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 40px;
-            /* Explicit Neon Yellow Border */
-            border: 3px solid #faff00; 
-            box-shadow: 0 0 20px #faff00, inset 0 0 10px #faff00;
-            text-align: center;
-            max-width: 600px;
-            backdrop-filter: blur(10px);
-        }
-
-        h1 {
-            /* Explicit Neon Yellow Text */
-            color: #faff00;
-            font-size: 2.2rem;
-            margin: 0 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px #faff00;
-        }
-
-        p {
-            /* Keep secondary text Yellow but slightly softer */
-            color: #faff00;
-            font-size: 1.2rem;
-            margin: 0;
-            opacity: 0.9;
-            font-weight: bold;
-        }
-
-        .neon-line {
-            height: 2px;
-            background-color: #faff00;
-            margin-top: 25px;
-            box-shadow: 0 0 15px #faff00;
-            animation: flicker 2s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cand Chains [Limited]</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00ffcc;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 40px;
+    }
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #00cc99;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body>
-
-    <canvas id="matrix"></canvas>
-
-    <div class="overlay">
-        <div class="status-box">
-            <h1>Thank you for visiting!</h1>
-            <p>But the website is currently down!</p>
-            <div class="neon-line"></div>
-        </div>
-    </div>
-
-    <script>
-        const canvas = document.getElementById('matrix');
-        const ctx = canvas.getContext('2d');
-
-        let width, height, columns;
-        const fontSize = 16;
-        const charList = "ｦｱｳｴｵｶｷｹｺｻｼｽｾｿﾀﾂﾃﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ2345789Z*+-<>|";
-        let drops = [];
-
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            columns = Math.floor(width / fontSize);
-            drops = [];
-            for (let i = 0; i < columns; i++) {
-                drops[i] = Math.random() * -100;
-            }
-        }
-
-        function draw() {
-            // Trail effect
-            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
-            ctx.fillRect(0, 0, width, height);
-
-            // Matrix Neon Green Rain
-            ctx.fillStyle = "#0f0"; // Bright Green
-            ctx.font = fontSize + "px monospace";
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = "#0f0";
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = charList.charAt(Math.floor(Math.random() * charList.length));
-                const x = i * fontSize;
-                const y = drops[i] * fontSize;
-
-                ctx.fillText(text, x, y);
-
-                if (y > height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-            // Reset shadow so it doesn't affect other elements if we added any
-            ctx.shadowBlur = 0;
-        }
-
-        // Smoother animation loop
-        function animate() {
-            draw();
-            setTimeout(() => {
-                requestAnimationFrame(animate);
-            }, 40); // Controls the speed of the rain
-        }
-
-        window.addEventListener('resize', resize);
-        
-        resize();
-        animate();
-    </script>
-</body>
-</html>
+<body><header>
+  <h1>My Website</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><div class="hero">
+  <h1>Welcome to My Site</h1>
+  <p>This is my first website 🔥</p>
+  <button class="btn" onclick="showMessage()">CLICK</button>
+</div><div class="section" id="about">
+  <h2>About Me</h2>
+  <p>welcome to my site!</p>
+</div><div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: mathewethan019@gmail.com</p>
+</div><footer>
+  <p>© 2026 My Website</p>
+</footer><script>
+  function showMessage() {
+    alert("update soon christmas2026 25th");
+  }
+</script></body>
+</html><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethan's Jewellery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #111;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #00ffcc;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 40px;
+    }
+    .btn {
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .btn:hover {
+      background: #00cc99;
+    }
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body><header>
+  <h1>Ethan's Chains & clothes </h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><div class="hero">
+  <h1>Premium Chains & Jewellery</h1>
+  <p>I sell chains and jewellery at great prices 💎</p>
+  <button class="btn" onclick="openWhatsApp()">Visit / Shop Now</button>
+</div><div class="section" id="about">
+  <h2>About</h2>
+  <p>I sell high-quality chains and jewellery. Message me to buy or ask about prices.</p>
+</div><div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Phone / WhatsApp: +447737977729</p>
+</div><footer>
+  <p>© 2026 Ethan's Jewellery</p>
+</footer><script>
+  function openWhatsApp() {
+    window.open("https://wa.me/447737977729?text=Hi%20I%20want%20to%20buy%20a%20chain", "_blank");
+  }
+</script></body>
+  
